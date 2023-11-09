@@ -1,0 +1,80 @@
+.container{
+  min-height: 50vh;
+  margin: 0;
+
+  padding-top: 20px;
+  font-family: Helvetica;
+  padding-bottom: 4vh;
+}
+
+
+.details{
+  display:block;
+}
+
+.each-order{
+  width: 48rem;
+
+  margin-left:auto;
+  margin-right:auto;
+}
+  .visible-div, .text-id, .text-status, .text-data{
+  display: flex;
+}
+
+
+.summary > div{
+  margin-top: 0.7rem;
+}
+.details > div{
+  display: flex;
+  margin-top: 0.7rem;
+}
+
+.summary span {
+  font-size: 1.2rem;
+  color:rgba(244, 244, 244, 1);
+}
+.summary .span-yellow {
+  font-size: 1.2rem;
+  color:rgba(255, 208, 80,1);
+}
+.summary h3{
+  margin: 0 1rem 0 0;
+  flex-basis: 5rem;
+  color:rgba(244, 244, 244, 1);
+}
+
+
+.buttons-container{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons{
+  margin: 2rem;
+  width: 35rem;
+}
+
+hr{
+  color:white;
+  width:90%;
+  size:1;
+  margin-top: 10px;
+  text-align: center;
+  margin-left: 5rem;
+}
+
+i{
+  font-size: 25px;
+  color:white;
+  margin: 0 0 15px 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+i:hover{
+  color:rgba(255, 208, 80,1);
+  cursor: pointer;
+}
+

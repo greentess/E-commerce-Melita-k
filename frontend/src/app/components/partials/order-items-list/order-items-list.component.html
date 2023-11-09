@@ -1,0 +1,60 @@
+<table>
+  <tr>
+    <td colspan="5">
+      <h3>Ваша заявка:</h3>
+    </td>
+  </tr>
+  <tr *ngFor="let ord_item of order.items">
+    <td>
+      <a routerLink="/home/item/{{ord_item.item.id}}">
+        <img src="assets/картинки/{{ord_item.item.imageUrl}}"/>
+      </a>
+    </td>
+    <td>
+      {{ord_item.item.name}}
+    </td>
+    <td>
+      <div *ngIf="ord_item.mod!=''" class="filter">
+        <div class="filter-color-hover" style="background-image: url('assets/vars/{{ord_item.mod}}.svg');"></div>
+        <span class="filter-title">{{ord_item.mod}}</span>
+      </div>
+      <div *ngIf="ord_item.coverage!=''" class="filter">
+        <div class="filter-color-hover" style="background-image: url('assets/vars/{{ord_item.coverage}}.svg');"></div>
+        <span class="filter-title">{{ord_item.coverage}}</span>
+      </div>
+      <div *ngIf="ord_item.handle!=''" class="filter">
+        <div class="filter-color-hover" style="background-image: url('assets/vars/{{ord_item.handle}}.svg');"></div>
+        <span class="filter-title">{{ord_item.handle}}</span>
+      </div>
+      <div *ngIf="ord_item.color!=''" class="filter">
+        <div class="filter-color-hover" style="background-image: url('assets/vars/{{ord_item.color}}.svg');"></div>
+        <span class="filter-title">{{ord_item.color}}</span>
+      </div>
+    </td>
+    <td >
+      {{ord_item.item.price}} руб
+    </td>
+    <td class="bonus">
+      <i *ngIf="ord_item.bonus!=0">+{{ord_item.bonus}} руб</i>
+    </td>
+    <td class="q">
+      {{ord_item.quantity}} шт
+    </td>
+    <td>
+      {{ord_item.price }} руб
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td>
+      <strong>
+        Всего :
+      </strong>
+    </td>
+    <td>
+      <strong>
+        {{order.totalPrice}} руб
+      </strong>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,22 @@
+<!-- <div *ngIf="tags">
+  <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}">
+    {{tag.name}}({{tag.count}})
+  </a>
+</div>
+-->
+<header *ngIf="tags" class="header" role="banner">
+  <h1 class="logo">
+    <a><span>Категории</span></a>
+  </h1>
+  <div class="nav-wrap">
+    <nav class="main-nav" role="navigation">
+      <ul class="unstyled list-hover-slide">
+        <li  *ngFor="let tag of tags">
+          <a routerLink="/home/tag/{{tag.name}}">
+            {{tag.name}}({{tag.count}})
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

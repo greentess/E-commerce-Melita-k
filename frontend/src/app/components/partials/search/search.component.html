@@ -1,0 +1,6 @@
+<div class="main-div">
+  <input #s type="text" placeholder="Что вы ищете?"
+   (keyup.enter)="searching(s.value)"
+   [value]="search" />
+  <button (click)="searching(s.value)"><i class="fa fa-search" aria-hidden="true"></i></button>
+</div>

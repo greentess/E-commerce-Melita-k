@@ -1,0 +1,263 @@
+.container-mini {
+  height:600px;
+  width:100%;
+  background-image: url('/assets/proizvodstvo/ЗаголовокАвиа2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.second-minic{
+  height:350px;
+  width:48.5%;
+  padding-left: 1%;
+  position: absolute;
+  left: 50.5%;
+  top: 420px;
+  background-color: rgba(240, 248, 255, 0.67);
+  margin: 0;
+}
+
+h3{
+  color: rgba(244, 244, 244, 1);
+  font-weight: 700;
+  font-size: 30px;
+  vertical-align: middle;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.minic p{
+  color: rgba(244, 244, 244, 1);
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.second-minic p{
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  margin-top: 6%;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  margin-left: 2%;
+  text-align: justify;
+  margin-right: 2%;
+}
+
+
+
+
+
+/* .container-cat {
+  height:350px;
+  width:75%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.container-left {
+  height:100%;
+  width:50%;
+}
+
+.container-right {
+  height:100%;
+  width:50%;
+}
+.container-image-right {
+  height:100%;
+  width:100%;
+  background-size: 100%;
+  overflow: hidden;
+	transition: 1s ease;
+  opacity: 0.6;
+} */
+
+
+.container{
+  height:350px;
+  width:90%;
+  background-color: transparent;
+  margin-left: 7.75%;
+}
+.each {
+  display: flex;
+  flex-direction: row;
+  height:100%;
+  width:100%;
+  cursor: pointer;
+}
+
+.container-left {
+  height:100%;
+  width:50%;
+  background-color:   rgba(26, 34, 36, 1);
+  clip-path: polygon(95% 0.00%,
+                    95% 40%,
+                    100.00% 50%,
+                    95% 60%,
+                    95% 100%,
+                    0.00% 100%,
+                    0.00% 0.00%);
+z-index: 10;
+}
+.container:hover .container-left{
+  background-color:  rgb(20, 21, 20);
+  transition: 1s ease;
+}
+.container-right {
+  height:100%;
+  width:50%;
+  margin-left: -5%;
+  z-index: 5;
+}
+
+.reverse-name{
+  clip-path: polygon(5% 0.00%,
+  100% 0.00%,
+  100% 100%,
+  5% 100.00%,
+  5% 60%,
+  0.00% 50%,
+  5% 40%,
+  5% 0.00%);
+  margin-left: -5%;
+  width: 50%;
+}
+.reverse-logo {
+  margin-left: 0%;
+  z-index: 5;
+}
+
+
+
+.minics{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 10%;
+  align-items: center;
+
+}
+.reverse{
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.container-image-left {
+  height:100%;
+  width:100%;
+  background-size: cover;
+  overflow: hidden;
+  transition: 1s ease;
+  opacity: 0.8;
+  background-position: center;
+}
+.container-image-right {
+  height:100%;
+  width:100%;
+  background-size: 100%;
+  overflow: hidden;
+	transition: 1s ease;
+  opacity: 0.8;
+  background-position: center;
+}
+.container:hover .container-image-right {
+  transition: 1s ease;
+  opacity: 1;
+}
+.container:hover .container-image-left {
+  transition: 1s ease;
+  opacity: 1;
+}
+
+.main{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.content{
+  margin: 0;
+}
+
+.minics h2{
+  color:    rgba(255, 208, 80,1);
+  text-align: center;
+  margin-top: 20px;
+  }
+  .minics p{
+    margin-bottom: 20px;
+    color: rgba(244, 244, 244, 1);
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.7;
+    }
+
+
+/* .container:hover .container-image-right {
+
+  transition: 1s ease;
+  opacity: 1;
+}
+.container:hover .container-image-left {
+
+  transition: left 1s linear;
+  opacity: 1;
+}
+
+.container-image-left {
+  height:100%;
+  width:100%;
+  background-size: cover;
+  overflow: hidden;
+  transition: left 1s linear;
+  opacity: 0.6;
+}
+
+.main{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.minics{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    margin-top: 2%;
+    align-items: center;
+}
+
+.minics h2{
+margin-bottom: 10px;
+color: rgba(244, 244, 244, 1);
+text-align: center;
+
+}
+.minics p{
+  margin-bottom: 20px;
+  color: rgba(244, 244, 244, 1);
+  margin-top: 20px;
+  text-align: justify;
+  line-height: 1.7;
+  }
+
+.content{
+  margin: 0;
+} */
+
+
+

@@ -1,0 +1,116 @@
+<div  *ngIf="isAdmin" class="container">
+	<h1>Добавление и изменение данных</h1>
+  <p>Название</p>
+  <input type="text"   class="form-control" [(ngModel)]="name">
+
+  <p>Стоимость</p>
+  <input type="number" (change)="inputValidator($event)" class="form-control" [(ngModel)]="price">
+
+	<p>Описание</p>
+	<textarea   [(ngModel)]="description" class="form-control" rows="10"></textarea>
+
+  <div>
+    <div class="flex">
+      <p>Категории</p>
+      <i class="fas fa-question" (click)="showDetailsCat()"></i>
+    </div>
+    <div *ngIf="detailscat" class="details-div">
+      <p class="details-p">
+        Введите категории ножа через запятую.<br>
+        Например:<br>
+        Боевое холодное оружие,Метательные ножи
+      </p>
+    </div>
+    <input   [(ngModel)]="tags" type="text" class="form-control">
+  </div>
+
+  <div>
+    <div class="flex">
+      <p>Технические характеристики</p>
+      <i class="fas fa-question" (click)="showDetailsTech()"></i>
+    </div>
+    <div *ngIf="detailstech" class="details-div">
+      <p class="details-p">
+        Введите технические характеристики ножа через двоеточие и запятую.Если у данной модели они отсутсвуют, то оставьте поле пустым.<br>
+        Например:<br>
+        Длина клинка:256мм,Ширина клинка:30мм,Толщина обуха:5мм
+      </p>
+    </div>
+    <textarea  [(ngModel)]="origins" type="text" class="form-control" rows="5"></textarea>
+  </div>
+  <div>
+    <div class="flex">
+      <p>Варианты покрытия</p>
+      <i class="fas fa-question" (click)="showDetailsCov()"></i>
+    </div>
+    <div *ngIf="detailscov" class="details-div">
+      <p class="details-p">
+        Введите варианты покрытия клинка ножа через запятую.Если у данной модели они отсутсвуют, то оставьте поле пустым.<br>
+        Например:<br>
+        Антиблик,Камуфляж,Хром
+      </p>
+    </div>
+    <input  [(ngModel)]="vars_coverage" type="text" class="form-control">
+  </div>
+
+  <div>
+    <div class="flex">
+      <p>Варианты рукояти</p>
+      <i class="fas fa-question" (click)="showDetailsHan()"></i>
+    </div>
+    <div *ngIf="detailshan" class="details-div">
+      <p class="details-p">
+        Введите варианты материала рукояти ножа через запятую.Если у данной модели они отсутсвуют, то оставьте поле пустым.<br>
+        Например:<br>
+        Дерево,Резина,Кожа
+      </p>
+    </div>
+    <input   [(ngModel)]="vars_handle" type="text" class="form-control">
+  </div>
+
+  <div>
+    <div class="flex">
+      <p>Варианты цвета</p>
+      <i class="fas fa-question" (click)="showDetailsCol()"></i>
+    </div>
+    <div *ngIf="detailscol" class="details-div">
+      <p class="details-p">
+        Введите варианты цвета через запятую. Если у данной модели они отсутсвуют, то оставьте поле пустым.<br>
+        Например:<br>
+        Желтый,Зеленый
+      </p>
+    </div>
+    <input   [(ngModel)]="vars_color" type="text" class="form-control">
+  </div>
+
+  <div>
+    <div class="flex">
+      <p>Варианты модификаций</p>
+      <i class="fas fa-question" (click)="showDetailsMod()"></i>
+    </div>
+    <div *ngIf="detailsmod" class="details-div">
+      <p class="details-p">
+        Введите варианты модификаций ножа через запятую.Если у данной модели они отсутсвуют, то оставьте поле пустым.<br>
+        Например:<br>
+        Скелетная насадка,Длина 170мм,Длина 150мм
+      </p>
+    </div>
+    <input   [(ngModel)]="vars_mod" type="text" class="form-control">
+  </div>
+  <div>
+    <div class="flex">
+      <p>Изображение URL</p>
+      <i class="fas fa-question" (click)="showDetailsImg()"></i>
+    </div>
+    <div *ngIf="detailsimg" class="details-div">
+      <p class="details-p">
+        Добавьте файл в папку assets/картинки с расширением jpg и введите название файла без расширения.<br>
+        Например:<br>
+        Гюрза
+      </p>
+    </div>
+    <input  [(ngModel)]="imageUrl" type="text" class="form-control" required >
+  </div>
+
+	<Button (click)="addItem()" class="btn btn-primary">ВНЕСТИ ИЗМЕНЕНИЯ</Button>
+</div>

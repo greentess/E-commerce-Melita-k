@@ -1,0 +1,68 @@
+<head>
+  <script src="https://kit.fontawesome.com/9ebb82abd8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-main">
+    <div class="container">
+      <div class="center">
+        <h3 class="title">Полезные ссылки</h3>
+        <ul class="list">
+          <li class="list-item" routerLink="/home/mainpage">Главная</li>
+          <li class="list-item" routerLink="/home/company-knives">Производство ножей</li>
+          <li class="list-item" routerLink="/home/contacts">Контакты</li>
+          <li class="list-item" routerLink="/home/company-avia">Авиационное производство</li>
+          <li class="list-item" routerLink="/home/about-company">О компании</li>
+          <li class="list-item" routerLink="/home/dilers">Магазины и дилеры</li>
+          <li class="list-item" routerLink="/home/catalog">Каталог</li>
+        </ul>
+      </div>
+      <div class="right">
+        <h3 class="title">Связь с нами</h3>
+        <div class="contact-item">
+          <i class="fa fa-location-arrow" aria-hidden="true" ></i>
+          <div> 420095, Республика Татарстан, г. Казань, ул. Восстания, д. 100, (территория ООО «Химград»).        </div>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-phone" aria-hidden="true" ></i>
+          <div> +7(843)212-51-58        </div>
+        </div>
+        <div class="contact-item" style="cursor: pointer;" (click)="GoTo('https://mail.yandex.ru/compose?mailto=melitak@yandex.ru&subject=Здравствуйте!&body=Хочу поинтересоваться...')">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <div class="p-link"> melitak@yandex.ru        </div>
+        </div>
+        <div class="social-media">
+          <i class="fab fa-vk"  (click)="GoTo('https://vk.com/melitak')"></i>
+          <i class="fab fa-telegram" (click)="GoTo('https://web.telegram.org/k/#@melitak1996')"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<!-- <body>
+    <footer class="myfooter">
+        <div class="footer-right">
+            <a href="https://wapp.click/79874162330"><i class="fab fa-whatsapp"> </i></a>
+            <a href="https://www.instagram.com/sens.a.t/"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/greentess"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="footer-left">
+            <p class="footer-links" >
+                <a class="link-1" routerLink="/mainpage">Главная</a>
+                <a routerLink="/catalog">Каталог</a>
+                <a routerLink="/contacts">Контакты</a>
+
+                <a routerLink="/cart-page">Корзина</a>
+            </p>
+            <p>CERAMIC vibes &copy; 2022</p>
+        </div>
+
+    </footer>
+</body> -->
+
+
+

@@ -1,0 +1,38 @@
+
+<div *ngIf="images && images.length > 0" class="slider-container">
+  <img  *ngFor="let image of images;let i=index"
+  [src]="image.imageSrc" [alt]="image.imageAlt"
+  [ngClass]="{'image-active': selectedIndex===i}"
+  class="fade"
+  >
+
+  <div class="area-text-nozi ">
+    <img class="text-nozi" src="assets/slider/Text.svg">
+  </div>
+
+  <h3 class="slide-text-left">This is the left slider Image of our carousel</h3>
+  <h3 class="slide-text-right">This is the right slider Image of our carousel</h3>
+
+
+  <div *ngIf="indicators" class="slider-dot-container">
+    <span *ngFor="let dot of images; let i=index"
+    class="dot"
+    [ngClass]="{'active': selectedIndex===i}"
+    (click)="selectImage(i)"
+    >
+    </span>
+  </div>
+
+  <div *ngIf="controls" class="btn-slider btn-prev"
+  (click)="onPrevClick()"
+  >
+    <i class="fa fa-angle-double-left icon-slider icon-prev"></i>
+  </div>
+
+  <div *ngIf="controls" class="btn-slider btn-next"
+  (click)="onNextClick()"
+  >
+    <i class="fa fa-angle-double-right icon-slider icon-next"></i>
+  </div>
+</div>
+

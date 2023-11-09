@@ -1,0 +1,134 @@
+<div>
+  <div class="container-mini">
+    <h1 class="title">Каталог</h1>
+    <h4 class="title-mini">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/> sed do eiusmod tempor incididunt ut labore.</h4>
+    <h4 class="title-mini2" *ngIf="mytag!='Все'">{{mytag}}</h4>
+  </div>
+
+  <div class="big-container">
+
+    <div class="filters" *ngIf='(this.mytag=="Все"||this.mytag=="Гражданские ножи"||this.mytag=="Боевое холодное оружие"||this.mytag=="Хозяйственно-бытовые ножи"||this.mytag=="Метательные ножи"||this.mytag=="Ножи с фиксированным клинком"||this.mytag=="Складные ножи"||this.mytag=="Подарочные ножи" ||this.mytag=="Ножи для дайвинга")'>
+
+      <h1 class="logo">
+        <a><span>Фильтры</span></a>
+      </h1>
+
+      <div >
+          <div class="custom-slider">
+          <h3> Общая длина</h3>
+          <ng5-slider [(value)]="min_od" [(highValue)]="max_od" [options]="options_od" (userChange)="getEvent_od($event)"></ng5-slider>
+        </div>
+
+        <div class="custom-slider">
+          <h3> Длина клинка</h3>
+          <ng5-slider [(value)]="min_dk" [(highValue)]="max_dk" [options]="options_dk" (userChange)="getEvent_dk($event)"></ng5-slider>
+        </div>
+
+        <div class="custom-slider">
+          <h3> Ширина клинка</h3>
+          <ng5-slider [(value)]="min_sh" [(highValue)]="max_sh" [options]="options_sh" (userChange)="getEvent_sh($event)"></ng5-slider>
+        </div>
+
+        <div class="custom-slider">
+          <h3> Толщина обуха</h3>
+          <ng5-slider [(value)]="min_to" [(highValue)]="max_to" [options]="options_to" (userChange)="getEvent_to($event)"></ng5-slider>
+        </div>
+
+
+        <div class="custom-slider">
+          <h3> Покрытие</h3>
+          <div class="checking">
+            <h5> Антиблик</h5>
+            <input type="checkbox" id="Checkbox_Anti" value="anti" (change)="OnChange_Anti($event)" [checked]="const_check_anti" >
+          </div>
+
+          <div class="checking">
+            <h5> Камуфляж</h5>
+            <input type="checkbox" id="Checkbox_Camou" value="camouflage" (change)="OnChange_Camou($event)"  [checked]="const_check_camou" >
+          </div>
+
+          <div class="checking">
+            <h5> Хром</h5>
+            <input type="checkbox" id="Checkbox_Chrome" value="chrome" (change)="OnChange_Chrome($event)"  [checked]="const_check_chrome">
+          </div>
+        </div>
+
+        <div class="custom-slider">
+          <h3> Рукоять</h3>
+          <div class="checking">
+            <h5> Резина</h5>
+            <input type="checkbox" id="Checkbox_Rez" value="rez" (change)="OnChange_Rez($event)" [checked]="const_check_rez" >
+          </div>
+
+          <div class="checking">
+            <h5> Кожа</h5>
+            <input type="checkbox" id="Checkbox_Koz" value="koz" (change)="OnChange_Koz($event)" [checked]="const_check_koz" >
+          </div>
+
+          <div class="checking">
+            <h5> Дерево</h5>
+            <input type="checkbox" id="Checkbox_Der" value="der" (change)="OnChange_Der($event)" [checked]="const_check_der" >
+          </div>
+        </div>
+
+
+
+
+      <button class="but_filters" (click)="filters_start()">Применить &rarr;</button>
+      <button class="but_filters_del" (click)="filters_del()">Очистить &rarr;</button>
+      </div>
+  </div>
+
+
+
+
+    <div class="container-right">
+      <div class="sort-search">
+
+        <details class="custom-select">
+          <summary name="radios" class="radios">
+            <input  type="radio" name="item" id="default"  title="Сортировка..." disabled checked>
+            <input  (click)="func()" type="radio" name="item" id="name" title="По названию (↑)">
+            <input (click)="func()"type="radio" name="item" id="-name" title="По названию (↓)">
+                      </summary>
+          <ul class="list">
+            <li>
+              <label for="name">
+                По названию (↑)
+                <span></span>
+              </label>
+            </li>
+            <li>
+              <label for="-name">По названию (↓)</label>
+            </li>
+          </ul>
+        </details>
+        <app-search></app-search>
+      </div>
+
+      <app-not-found
+      [visible]="!items || !items.length"
+      resetLinkText="Вернуться">
+      </app-not-found>
+
+      <div class="catalog">
+        <div *ngFor="let item of filter_items | sort : selectedField" class="container" >
+            <img  class="image" src="assets/картинки/{{item.imageUrl}}"/>
+            <img *ngIf="item.imageUrl=='Гравировка' || item.imageUrl=='Серрейтор' || item.imageUrl=='АдаптерБалон' || item.imageUrl=='КлипсаКайдекс' || item.imageUrl=='СпинкаВодолазная' || item.imageUrl=='КошкаВодолазная' || item.imageUrl=='НожныАдаптер'" class="image" src="assets/картинки/НетФото.jpg"/>
+
+            <div class="user-info">
+              <h2 class="titlik">{{item.name}}</h2>
+                  <span class="text" routerLink="/home/tag/{{item.tags![0]}}">{{item.tags![0]}}</span><br>
+                  <span class="text" routerLink="/home/tag/{{item.tags![1]}}">{{item.tags![1]}}</span>
+              <button class="but" routerLink="/home/item/{{item.id}}">Подробнее &rarr;</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+

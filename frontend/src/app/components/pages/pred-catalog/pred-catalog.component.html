@@ -1,0 +1,25 @@
+<div>
+  <div class="container-mini">
+    <h1 class="title-h1">Каталог</h1>
+    <h4 class="title-mini">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/> sed do eiusmod tempor incididunt ut labore.</h4>
+    <h4 class="title-mini2">Гражданские ножи</h4>
+  </div>
+
+  <div class="main-container" *ngIf="categories">
+    <div class="container" *ngFor="let tag of categories" routerLink="/home/tag/{{tag.name}}">
+
+        <div   class="info-container">
+          <h2 class="title">{{tag.name}}</h2>
+          <!--  <p class="text">{{tag.description}}</p> -->
+        </div>
+        <div class="image-container">
+          <img class="image" src="{{tag.imageUrl}}" >
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,41 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 4rem;
+  border: 1px rgb(255, 255, 255);
+  }
+
+  .details{
+    width: 28rem;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .error-list{
+    color: rgb(110, 29, 29);
+  }
+
+  .arr{
+    min-height: 595px;
+    max-height: 595px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .register{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .register a{
+    color:#ffd050;
+    text-decoration: none;
+  }

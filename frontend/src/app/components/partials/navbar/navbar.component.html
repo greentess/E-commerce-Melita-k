@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="wrapper-left">
+    <div class="wrapper-left-top">
+        <div class="menu-item">EN</div>
+        <p class="b">/</p>
+        <div class="menu-item">RU</div>
+    </div>
+  </div>
+
+   <div class="wrapper-center">
+     <div class="wrapper-center-top">
+       <img class="logo" src="assets/logo/лог.png" routerLink="/start"/>
+     </div>
+     <div class="wrapper-center-bot">
+            <div class="menu-item" routerLink="/home/mainpage">Главная</div>
+            <div class="menu-item" routerLink="/home/catalog">Каталог</div>
+            <div class="menu-item" routerLink="/home/about-company">О компании</div>
+            <div class="menu-item" routerLink="/home/contacts">Контакты</div>
+     </div>
+   </div>
+
+     <div class="wrapper-right">
+         <div class="wrapper-right-top" *ngIf="!isAuth">
+
+          <div class="menu-item"><a class="links" routerLink="/home/cart-page">Корзина</a></div>
+          <div class="menu-item"><a class="links" routerLink="/home/login">Вход</a></div>
+
+          </div>
+          <div class="wrapper-right-top" *ngIf="isAuth">
+            <div class="menu-item"><a  class="links" routerLink="/home/myorders">Заявки </a></div>
+            <div class="menu-item"><a  class="links" routerLink="/home/cart-page">Корзина </a></div>
+            <div class="menu-item"><a  class="links" (click)="logout()">Выход </a></div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+table{
+  width: 100%;
+  border: 1px solid rgba(244, 244, 244, 1);
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+h3{
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  color: rgba(244, 244, 244, 1);
+}
+
+a:hover{
+  opacity: 0.9;
+}
+
+td{
+  height: 3rem;
+}
+
+td img{
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+
+}
+td{
+  color:rgba(244, 244, 244, 1);
+}
+strong{
+  color:rgba(255, 208, 80,1);
+}
+.q{
+  text-align: center;
+}
+
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filter-title {
+  font-weight: 200;
+  margin-left:5px;
+  color:rgba(244, 244, 244, 1);
+}
+
+  .filter-color-hover {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 90;
+    background-size: 75%;
+    }
+
+

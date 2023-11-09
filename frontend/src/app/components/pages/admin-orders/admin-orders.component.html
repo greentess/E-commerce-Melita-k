@@ -1,0 +1,49 @@
+
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
+</head>
+
+<div class="container">
+  <app-title title="Заявки" fontSize="1.6rem"></app-title>
+
+  <ng-container *ngFor="let order of orders; let i = index" class="content">
+    <hr/>
+
+    <div class="each-order">
+      <div class="summary">
+        <div class="visible-div">
+          <div class="text-id">
+            <h3>№:</h3>
+            <span>{{order.id}}</span>
+          </div>
+          <i *ngIf="i!=indexHidden" (click)="indexHidden=i" class="fa fa-caret-down"></i>
+          <i *ngIf="i==indexHidden" (click)="indexHidden=-1" class="fa fa-caret-up"></i>
+        </div>
+        <div class="text-status">
+          <h3>Статус:</h3>
+          <span>&nbsp;&nbsp;&nbsp;{{order.status}}</span>
+        </div>
+        <div class="text-data">
+          <h3>Дата:</h3>
+          <span>&nbsp;&nbsp;&nbsp;{{order.createdAt | date:'dd-MM-yyyy HH:mm'}}</span>
+        </div>
+        <div class="details" *ngIf="i==indexHidden">
+            <div>
+              <h3>Имя:</h3>
+              <span>&nbsp;&nbsp;&nbsp;{{order.name}}</span>
+            </div>
+            <div>
+              <h3>Телефон:</h3>
+              <span>{{order.phone}}</span>
+            </div>
+            <div>
+              <h3>Почта:</h3>
+              <span>&nbsp;&nbsp;&nbsp;{{order.email}}</span>
+            </div>
+        </div>
+        <order-items-list *ngIf="i==indexHidden" [order]="order"></order-items-list>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

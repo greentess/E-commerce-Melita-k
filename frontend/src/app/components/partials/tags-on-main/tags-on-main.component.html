@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body *ngIf="categories">
+  <div class="crd crd--effect-2" *ngFor="let tag of categories" routerLink="/home/tag/{{tag.name}}" >
+    <div class="crd-img"
+      style='background-image: url("assets/categories/{{tag.imageUrl}}.jpg");'>
+    </div>
+    <div class="crd-info">
+      <h2 class="crd-heading">{{tag.name}}</h2>
+      <p class="crd-text">Подробнее...</p>
+    </div>
+  </div>
+</body>
+</html>

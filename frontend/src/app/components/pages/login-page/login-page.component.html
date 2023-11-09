@@ -1,0 +1,31 @@
+<div class="arr">
+<div class="container">
+  <div class="details">
+
+    <app-title title="Авторизация"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <text-input
+    [control]="fc.email"
+    [showErrorsWhen]="isSubmitted"
+    type="email"
+    label="Почта">
+  </text-input>
+
+  <text-input
+  [control]="fc.password"
+  [showErrorsWhen]="isSubmitted"
+  type="password"
+  label="Пароль">
+</text-input>
+
+<default-button text="Вход"></default-button>
+<div class="register">
+  Еще нет аккаунта? &nbsp;
+  <a routerLink="/home/register" [queryParams]="{returnUrl : returnUrl}">
+    Зарегистрируйтесь
+  </a>
+</div>
+  </form>
+  </div>
+</div>
+</div>

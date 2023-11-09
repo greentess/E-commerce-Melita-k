@@ -1,0 +1,165 @@
+<body>
+  <app-not-found
+    [visible]="!item"
+    notFoundMessage="Товар не найден :("
+    resetLinkText="Вернуться к каталогу">
+  </app-not-found>
+
+  <div *ngIf="item" class="wrapper">
+
+
+
+       <div *ngIf="item.name==='Гюрза'" class="img-container">
+          <img class="image" src="assets/gallery/{{item.name}}/{{vars_coverage![coverage_index].name}}{{vars_handle![handle_index].name}}/{{item.imageUrl}}" alt="{{item.imageUrl}}" id="preview">
+          <div class="img-prev">
+            <div class="img-slide active">
+              <img  src="assets/gallery/{{item.name}}/{{vars_coverage![coverage_index].name}}{{vars_handle![handle_index].name}}/1{{item.imageUrl}}" alt="1{{item.imageUrl}}" AppGallery>
+            </div>
+            <div class="img-slide">
+              <img src="assets/gallery/{{item.name}}/{{vars_coverage![coverage_index].name}}{{vars_handle![handle_index].name}}/2{{item.imageUrl}}" alt="2{{item.imageUrl}}" AppGallery>
+            </div>
+            <div class="img-slide">
+              <img src="assets/gallery/{{item.name}}/{{vars_coverage![coverage_index].name}}{{vars_handle![handle_index].name}}/3{{item.imageUrl}}" alt="3{{item.imageUrl}}" AppGallery>
+            </div>
+            <div class="img-slide">
+              <img src="assets/gallery/{{item.name}}/{{vars_coverage![coverage_index].name}}{{vars_handle![handle_index].name}}/4{{item.imageUrl}}" alt="4{{item.imageUrl}}" AppGallery>
+            </div>
+          </div>
+        </div>
+
+
+    <div *ngIf="item.name!='Гюрза'" class="img-container">
+    <img class="image" src="assets/картинки/{{item.imageUrl}}" [alt]="item.name"/>
+    </div>
+
+
+
+
+    <div class="info-container">
+      <h1 class="title">{{item.name}}</h1>
+      <h3 class="title-mini" *ngFor="let value of item.tags" routerLink="/home/tag/{{value}}">
+        {{value}}
+      </h3>
+
+
+      <h4 *ngIf="!isEmpty(vars_coverage)" class="title-mini-yellow">Покрытие</h4>
+      <div *ngIf="!isEmpty(vars_coverage)" class="filter-container">
+           <div class="filter" *ngFor="let value of vars_coverage; let i = index ">
+            <div *ngIf="i!=coverage_index" (click)="coverage_index=i" class="filter-color" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+            <div *ngIf="i==coverage_index"  class="filter-color-hover" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+
+            <span class="filter-title">{{value.name}}</span>
+            </div>
+      </div>
+
+      <h4 *ngIf="!isEmpty(vars_handle)" class="title-mini-yellow">Рукоять</h4>
+      <div *ngIf="!isEmpty(vars_handle)" class="filter-container">
+           <div class="filter" *ngFor="let value of vars_handle;let j = index">
+            <div *ngIf="j!=handle_index" (click)="handle_index=j" class="filter-color" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+            <div *ngIf="j==handle_index"  class="filter-color-hover" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+
+            <span class="filter-title">{{value.name}}</span>
+            </div>
+      </div>
+
+       <h4 *ngIf="!isEmpty(vars_color)" class="title-mini-yellow">Цвет</h4>
+      <div *ngIf="!isEmpty(vars_color)" class="filter-container">
+           <div class="filter" *ngFor="let value of vars_color;let c = index">
+            <div *ngIf="c!=color_index" (click)="color_index=c" class="filter-color" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+            <div *ngIf="c==color_index"  class="filter-color-hover" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+
+            <span class="filter-title">{{value.name}}</span>
+            </div>
+      </div>
+
+      <h4 *ngIf="!isEmpty(vars_mod)" class="title-mini-yellow">Модификации</h4>
+      <div *ngIf="!isEmpty(vars_mod)" class="filter-container">
+           <div class="filter" *ngFor="let value of vars_mod;let m = index">
+            <div *ngIf="m!=mod_index" (click)="mod_index=m" class="filter-color" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+            <div *ngIf="m==mod_index"  class="filter-color-hover" style="background-image: url('assets/vars/{{value.name}}.svg');"></div>
+
+            <span class="filter-title">{{value.name}}</span>
+            </div>
+      </div>
+
+      <h4 *ngIf="!isEmpty(item.description)" class="title-mini-yellow">Описание</h4>
+      <p  class="desc" *ngFor="let value of readdesc(item.description)"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{value}}</p>
+      <!-- <span class="price">{{item.price}} руб</span> -->
+
+      <h4 *ngIf="!isEmptymas(item.origins)"  class="title-mini-yellow">Технические характеристики</h4>
+
+      <div *ngIf="!isEmptymas(item.origins)" class="tech">
+       <div class="tech-left">
+        <div  *ngFor="let value of item.origins">
+          <div *ngFor="let name of value; let i = index">
+            <div class="tech-name" *ngIf="i%2 == 0">
+              {{name}}
+            </div>
+          </div>
+        </div>
+       </div>
+       <div class="tech-right">
+        <div  *ngFor="let value of item.origins">
+          <div *ngFor="let par of value; let i = index">
+            <div class="tech-par" *ngIf="i%2 != 0">
+              {{par}}
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
+       <div class="add-container">
+        <button class="button" (click)="addToCart()">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isNo(recommenditems)" >
+    <h1 class="title-rec">Рекомендуемые товары</h1>
+    <div class="catalog-rec">
+        <div  *ngFor="let recitem of recommenditems" >
+          <div *ngIf="recitem.name!=item.name" class="container-rec">
+            <img class="image-rec" src="assets/картинки/{{recitem.imageUrl}}"/>
+            <div class="user-info-rec">
+              <h2 class="titlik-rec">{{recitem.name}}</h2>
+                  <span class="text-rec">{{recitem.tags}}</span>
+              <button class="but-rec" routerLink="/home/item/{{recitem.id}}">Подробнее &rarr;</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+
+
+
+<!-- <body bgcolor="#eceae6">
+  <app-not-found
+[visible]="!item"
+notFoundMessage="Товар не найден :("
+resetLinkText="Вернуться к каталогу">
+</app-not-found>
+        <div *ngIf="item" class="card">
+            <nav>
+                <svg class="arrow" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 " stroke="#727272"/></svg>
+                <a routerLink="/catalog" class="nav-link" style="color: #2C1E18">В каталог</a>
+            </nav>
+            <div class="photo">
+                <img [src]="item.imageUrl" [alt]="item.name">
+            </div>
+            <div class="description">
+                <h2>{{item.name}}</h2>
+                <br>
+                <h4>Категория: {{item.tags}}</h4>
+                <h4>Тема: {{item.origins}}</h4>
+                <h1>{{item.price}} руб</h1>
+                <br>
+                <p>{{item.description}}</p>
+
+
+                <button (click)="addToCart()">В корзину</button>
+            </div>
+        </div>
+</body> -->

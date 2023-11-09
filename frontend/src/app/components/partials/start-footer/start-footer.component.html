@@ -1,0 +1,46 @@
+<head>
+  <script src="https://kit.fontawesome.com/9ebb82abd8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-main">
+    <div class="container">
+      <div class="center">
+        <h3 class="title">Полезные ссылки</h3>
+        <ul class="list">
+          <li class="list-item" routerLink="/start">Главная</li>
+          <li class="list-item" routerLink="/start/company-knives">Производство ножей</li>
+          <li class="list-item" routerLink="/start/contacts">Контакты</li>
+          <li class="list-item" routerLink="/start/company-avia">Авиационное производство</li>
+          <li class="list-item" routerLink="/start/about-company">О компании</li>
+        </ul>
+      </div>
+      <div class="right">
+        <h3 class="title">Связь с нами</h3>
+        <div class="contact-item">
+          <i class="fa fa-location-arrow" aria-hidden="true" ></i>
+          <div> 420095, Республика Татарстан, г. Казань, ул. Восстания, д. 100, (территория ООО «Химград»).        </div>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-phone" aria-hidden="true" ></i>
+          <div> +7(843)212-51-58        </div>
+        </div>
+        <div class="contact-item"  (click)="GoTo('https://mail.yandex.ru/compose?mailto=melitak@yandex.ru&subject=Здравствуйте!&body=Хочу поинтересоваться...')">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <div class="p-link"> melitak@yandex.ru        </div>
+        </div>
+        <div class="social-media">
+          <i class="fab fa-vk"  (click)="GoTo('https://vk.com/melitak')"></i>
+          <i class="fab fa-telegram" (click)="GoTo('https://web.telegram.org/k/#@melitak1996')"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+<body>
+  <app-title *ngIf="cart && cart.cartItems.length"  title="Ваша корзина" margin="1.5rem 1rem 0 2.5rem"></app-title>
+  <app-not-found
+    [visible]="!cart || !cart.cartItems.length"
+    notFoundMessage="Ваша корзина пуста :("
+    resetLinkText="Вернуться к каталогу">
+  </app-not-found>
+
+  <div *ngIf="cart && cart.cartItems.length" class="container">
+    <ul>
+      <li *ngFor="let cartItem of cart.cartItems">
+        <div>
+          <img src="assets/картинки/{{cartItem.item.imageUrl}}" [alt]="cartItem.item.name">
+        </div>
+        <div class="nameitem">
+          <a routerLink="/home/item/{{cartItem.item.id}}">
+            {{cartItem.item.name}}
+          </a>
+        </div>
+
+        <div class="filters">
+          <div *ngIf="cartItem.mod!==''" class="filter-container">
+            <div class="filter">
+              <span class="filter-title">Модификация:</span>
+              <div class="filter-color-hover" style="background-image: url('assets/vars/{{cartItem.mod}}.svg');"></div>
+              <span *ngFor="let varr of variant">
+                <p *ngIf="varr.name==cartItem.mod && varr.bonus!=0" class="filter-title">+{{varr.bonus}} руб</p>
+              </span>
+            </div>
+          </div>
+          <div *ngIf="cartItem.coverage!=''" class="filter-container">
+            <div class="filter">
+              <span class="filter-title">Покрытие:</span>
+              <div class="filter-color-hover" style="background-image: url('assets/vars/{{cartItem.coverage}}.svg');"></div>
+              <span *ngFor="let varr of variant">
+                <p *ngIf="varr.name==cartItem.coverage && varr.bonus!=0" class="filter-title">+{{varr.bonus}} руб</p>
+              </span>
+            </div>
+          </div>
+          <div *ngIf="cartItem.handle!=''" class="filter-container">
+            <div class="filter">
+              <span class="filter-title">Рукоять:</span>
+              <div class="filter-color-hover" style="background-image: url('assets/vars/{{cartItem.handle}}.svg');"></div>
+              <span *ngFor="let varr of cartItem.item.variants">
+                <p *ngIf="varr.name==cartItem.handle && varr.bonus!=0" class="filter-title">+{{varr.bonus}} руб</p>
+              </span>
+            </div>
+          </div>
+          <div *ngIf="cartItem.color!=''" class="filter-container">
+            <div class="filter">
+              <span class="filter-title">Цвет:</span>
+              <div class="filter-color-hover" style="background-image: url('assets/vars/{{cartItem.color}}.svg');"></div>
+              <span *ngFor="let varr of variant">
+                <p *ngIf="varr.name==cartItem.color && varr.bonus!=0" class="filter-title">+{{varr.bonus}} руб</p>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quantity">
+        <button type="button" class="btn"(click)="changeQuantityPlus(cartItem)">
+          <i class="fa fa-plus"></i>
+        </button>
+        <span class="quan">{{cartItem.quantity}}</span>
+        <button type="button" class="btn"(click)="changeQuantityMinus(cartItem)">
+            <i class="fa fa-minus"></i>
+        </button>
+        </div>
+        <div class="price">
+          {{cartItem.price}} руб
+        </div>
+
+        <div class="butrem">
+
+            <i (click)="removeFromCart(cartItem)" class="fa fa-trash"></i>
+
+        </div>
+      </li>
+    </ul>
+
+    <div class="checkout">
+      <div>
+        <div class="items-count"><b class="count-price">{{cart.totalCount}}</b></div>
+        <div class="total-price"><b class="count-price">{{cart.totalPrice}} руб</b></div>
+      </div>
+      <a *ngIf="isAuth" routerLink="/home/checkout">Перейти к оформлению заявки</a>
+      <a *ngIf="!isAuth" routerLink="/home/login">Перейти к оформлению заявки</a>
+
+    </div>
+
+  </div>
+</body>

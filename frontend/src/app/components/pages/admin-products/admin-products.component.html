@@ -1,0 +1,31 @@
+<app-not-found
+[visible]="!isAdmin"
+notFoundMessage="Вам сюда нельзя!"
+resetLinkText="Вернуться">
+</app-not-found>
+
+<div *ngIf="isAdmin" class="container">
+	<h1>Список товаров</h1>
+  <Button routerLink="/manage/item/add">Добавить новый товар</Button>
+
+	<table class="table table-bordered">
+	  <tr>
+	  	<th>ID</th>
+	  	<th>Наименование</th>
+      <th>Категории</th>
+	  	<th>Стоимость</th>
+	  	<th></th>
+	  	<th></th>
+	  </tr>
+
+	 	<tr  *ngFor="let item of itemList">
+	 		<td class="tr-error" *ngIf="item.name==='Товар1' || item.price===1 || item.description===''">{{ item.id }}</td>
+      <td *ngIf="item.name!='Товар1' && item.price!=1 && item.description!=''" >{{ item.id }}</td>
+	 		<td>{{ item.name }}</td>
+      <td>{{ item.tags }}</td>
+	 		<td>{{ item.price }}</td>
+      <td><i class="fas fa-pen" routerLink="/manage/item/add/{{ item.id }}"></i></td>
+      <td><i class="fas fa-trash" (click)="deleteItem(item.id)"></i></td>
+	 	</tr>
+	</table>
+</div>

@@ -1,0 +1,78 @@
+<div style="background: linear-gradient(rgba(26, 34, 36, 1),rgba(34, 34, 34, 1),rgba(26, 34, 36, 1));">
+  <app-slider [images]="images" [autoSlide]="true"></app-slider>
+  <app-tags-on-main-two></app-tags-on-main-two>
+
+
+
+
+  <div class="uslugi" *ngIf="items" >
+    <h1 class="title-rec ">Услуги</h1>
+    <div class="catalog-rec ">
+        <div  *ngFor="let item of items_uslugi" class="container-rec">
+            <img class="image-rec" src="assets/картинки/{{item.imageUrl}}"/>
+            <div class="user-info-rec">
+              <h2 class="titlik-rec">{{item.name}}</h2>
+                  <span class="text-rec" routerLink="/home/tag/{{item.tags![0]}}">{{item.tags}}</span>
+              <button class="but-rec" routerLink="/home/item/{{item.id}}">Подробнее &rarr;</button>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+
+  <div class="uslugi" *ngIf="items" >
+    <h1 class="title-rec2">Прочее</h1>
+    <div class="catalog-rec ">
+        <div  *ngFor="let item of items_prochee" class="container-rec">
+            <img class="image-rec" src="assets/картинки/{{item.imageUrl}}"/>
+            <div class="user-info-rec">
+              <h2 class="titlik-rec">{{item.tags![1]}}</h2>
+              <button class="but-rec" routerLink="/home/tag/{{item.tags![1]}}">В каталог &rarr;</button>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container" style="background-image: url('assets/main/ФонБлок.jpg');">
+    <div class="widthdiv">
+      <h1 class="title-vk">
+        Подписывайтесь на нашу официальную группу «ВКонтакте»
+      </h1>
+    </div>
+
+    <div class="images">
+      <div *ngFor="let vk_photo of this.vk_photos_small" class="photo">
+          <img  src="{{vk_photo.photoSrc}}"  (click)="GoTo('https://vk.com/melitak')" alt="photo" />
+      </div>
+    </div>
+
+    <div class="widthdiv">
+      <button class="but-podpiska" (click)="GoTo('https://vk.com/melitak')" >Подписаться &rarr;</button>
+    </div>
+
+
+
+
+   <!--  <div class="container-mini ">
+      <div class= "image-container-mini-left">
+          <div class="image1" routerLink="/home/catalog"></div>
+      </div>
+      <div class= "image-container-mini-right">
+          <div class="image2" routerLink="/home/about-company"></div>
+      </div>
+    </div>
+    <div class="image-container ">
+      <div class="image3" routerLink="/home/dilers"></div>
+    </div>
+  </div> -->
+
+
+</div>
+
+

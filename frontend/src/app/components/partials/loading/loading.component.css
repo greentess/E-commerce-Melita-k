@@ -1,0 +1,30 @@
+.container{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 34, 36, 1);
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  color:#ffd050;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+img{
+  border-bottom: 10px solid #ffd050;
+  width: 200px;
+  height: 200px;
+}
+
+h1{
+color: white;
+text-transform: lowercase;
+}

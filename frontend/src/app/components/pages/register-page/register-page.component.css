@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1.4rem;
+}
+
+.details{
+  width: 25rem;
+}
+
+.login{
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login a{
+  color:#ffd050;
+  text-decoration: none;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+
+   <div class="wrapper-center">
+     <div class="wrapper-center-top">
+       <img class="logo" src="assets/logo/Logo.svg" />
+     </div>
+     <div class="wrapper-center-bot"  *ngIf="isAuth">
+            <div class="menu-item" routerLink="/manage" routerLinkActive="active">Товары</div>
+            <div class="menu-item" routerLink="/manage/orders">Заявки</div>
+            <div *ngIf="!isAuth" class="menu-item"  routerLink="/home/login">Вход</div>
+            <div *ngIf="isAuth"  class="menu-item" (click)="logout()">Выход</div>
+     </div>
+   </div>
+
+
+</div>

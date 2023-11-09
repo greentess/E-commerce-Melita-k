@@ -1,0 +1,26 @@
+<div class="main-container" *ngIf="categories">
+  <div  class="m" *ngFor="let tag of categories">
+
+
+    <div class="container"  *ngIf="tag.name!='Гражданские ножи'" routerLink="/home/tag/{{tag.name}}">
+      <div class="info-container">
+        <h2 class="title">{{tag.name}}</h2>
+        <!--  <p class="text">{{tag.description}}</p> -->
+      </div>
+      <div class="image-container">
+        <img class="image" src="assets/categories/{{tag.imageUrl}}.jpg" >
+      </div>
+    </div>
+
+    <div class="container"  *ngIf="tag.name=='Гражданские ножи'" routerLink="/home/catalog/{{tag.name}}">
+      <div class="info-container">
+        <h2 class="title">{{tag.name}}</h2>
+        <!--  <p class="text">{{tag.description}}</p> -->
+      </div>
+      <div class="image-container">
+        <img class="image" src="assets/categories/{{tag.imageUrl}}.jpg" >
+      </div>
+    </div>
+
+  </div>
+</div>

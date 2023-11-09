@@ -1,0 +1,80 @@
+<div *ngIf="dilers && dilers.length > 0" class="content">
+  <app-title  title="Официальные магазины-партнеры" margin="1.5rem 1rem 0 2.5rem"></app-title>
+
+  <div class="sort-search">
+    <details class="custom-select">
+      <summary name="radios" class="radios">
+        <input  type="radio" name="diler" id="default"  title="Выберите город..." disabled checked>
+        <input  (click)="func()" type="radio" name="diler" id="all" title="Все города">
+        <input *ngFor="let city of cities" (click)="func()"type="radio" name="diler" id={{city}} title={{city}}>
+      </summary>
+      <ul class="list">
+        <li>
+          <label for="all">
+            Все города
+            <span></span>
+          </label>
+        </li>
+        <li *ngFor="let city of cities">
+          <label for={{city}}>{{city}}
+            <span></span>
+          </label>
+        </li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="main">
+    <div *ngFor="let diler of dilers | citySort : selectedField;let i = index" class="container-diler">
+
+      <div  class="each" *ngIf="i%2 == 0" (click)="GoTo(diler.dilerUrl)">
+        <div class="container-left ">
+          <div *ngIf="diler.name.length>24"  class="minics ">
+            <h1 style="margin-top: calc(160px - 2.2rem*2);">
+              {{diler.name}}
+            </h1>
+            <hr>
+            <p>{{diler.adr}}</p>
+          </div>
+
+          <div *ngIf="diler.name.length<=24"  class="minics ">
+            <h1 style="margin-top: calc(160px - 2.2rem);">
+              {{diler.name}}
+            </h1>
+            <hr>
+            <p>{{diler.adr}}</p>
+          </div>
+        </div>
+        <div class="container-right ">
+          <div class="container-image-right" style="background-image: url({{diler.imageSrc}});"></div>
+        </div>
+      </div>
+
+      <div  class="each" *ngIf="i%2 != 0" (click)="GoTo(diler.dilerUrl)">
+        <div class="container-right reverse-logo ">
+          <div class="container-image-left" style="background-image: url({{diler.imageSrc}});">
+          </div>
+        </div>
+        <div class="container-left reverse-name">
+          <div *ngIf="diler.name.length>24"  class="minics reverse">
+            <h1 style="margin-top: calc(160px - 2.2rem*2);">
+              {{diler.name}}
+            </h1>
+            <hr>
+            <p>{{diler.adr}}</p>
+          </div>
+
+          <div *ngIf="diler.name.length<=24"  class="minics reverse">
+            <h1 style="margin-top: calc(160px - 2.2rem);">
+              {{diler.name}}
+            </h1>
+            <hr>
+            <p>{{diler.adr}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

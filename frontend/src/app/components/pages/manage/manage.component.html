@@ -1,0 +1,8 @@
+<app-admin-navbar *ngIf="isAdmin"></app-admin-navbar>
+<router-outlet *ngIf="isAdmin"></router-outlet>
+<app-admin-footer *ngIf="isAdmin"></app-admin-footer>
+<app-not-found
+[visible]="!isAdmin"
+notFoundMessage="Вам сюда нельзя!"
+resetLinkText="Вернуться">
+</app-not-found>

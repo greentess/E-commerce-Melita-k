@@ -1,0 +1,33 @@
+<header>
+  <script src="node_modules/toastr/build/toastr.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</header>
+<div class="container">
+  <div class="content">
+    <app-title title="Заявка создана! Ожидайте!" fontSize="1.6rem"></app-title>
+    <div class="summary">
+      <div>
+        <h3>№:</h3>
+        <span>&nbsp;&nbsp;&nbsp;{{order.id}}</span>
+      </div>
+      <div>
+        <h3>Имя:</h3>
+        <span>&nbsp;&nbsp;&nbsp;{{order.name}}</span>
+      </div>
+      <div>
+        <h3>Телефон:</h3>
+        <span>{{order.phone}}</span>
+      </div>
+      <div>
+        <h3>Почта:</h3>
+        <span>&nbsp;&nbsp;&nbsp;{{order.email}}</span>
+      </div>
+    </div>
+    <order-items-list [order]="order"></order-items-list>
+  </div>
+
+  <div class="buttons-container">
+    <div class="buttons">
+    </div>
+  </div>
+</div>
