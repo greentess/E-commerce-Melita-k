@@ -4,7 +4,7 @@
 Стартовая страница:
 
 Главная страница:
-https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F1.jpg?raw=true
+![Главная](https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F1.jpg?raw=true)
 Каталог:
 
 Корзина:
