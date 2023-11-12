@@ -31,7 +31,7 @@
 ![Оформление2](https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%9F%D0%BE%D0%B4%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8.jpg?raw=true)
 
 Вся информация о заявке и клиенте приходит в специальный телеграм бот в следующем виде:
-[!Телеграм](https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%A2%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC.jpg?raw=true)
+![Телеграм](https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%A2%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC.jpg?raw=true)
 
 ### Регистрация/Авторизация:
 ![Авторизация](https://github.com/greentess/E-commerce-Melita-k/blob/main/%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.jpg?raw=true)
